@@ -5,11 +5,11 @@ const getComputerChoice = () => {
     return choice;
 }
 
-const getHumanChoice = () => {
-    let choice = prompt('Rock, paper or scissors?');
-    const lowerCaseChoice = choice.toLowerCase();
-    return lowerCaseChoice;
-}
+// const getHumanChoice = () => {
+//     let choice = prompt('Rock, paper or scissors?');
+//     const lowerCaseChoice = choice.toLowerCase();
+//     return lowerCaseChoice;
+// }
 
 let humanScore = 0;
 let computerScore = 0;
@@ -36,8 +36,30 @@ const playRound = (humanChoice, computerChoice) => {
     console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`);
 }
 
-for (let i = 0; i < 5; i++) {
-    let humanSelection = getHumanChoice();
+// for (let i = 0; i < 5; i++) {
+//     let humanSelection = getHumanChoice();
+//     let computerSelection = getComputerChoice();
+//     playRound(humanSelection, computerSelection);
+// }
+
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+
+rock.addEventListener('click', () => {
+    let humanSelection = 'rock';
     let computerSelection = getComputerChoice();
     playRound(humanSelection, computerSelection);
-}
+})
+
+paper.addEventListener('click', () => {
+    let humanSelection = 'paper';
+    let computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+})
+
+scissors.addEventListener('click', () => {
+    let humanSelection = 'scissors';
+    let computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+})
